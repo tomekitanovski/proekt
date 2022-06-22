@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from "./components/Nav";
+import Home from "./components/Home";
+import  Breakfast from "./components/Brekfast";
+import  Brunch  from "./components/Brunch";
+import  Lunch  from "./components/Lunch";
+import  Dinner  from "./components/Dinner";
+import  Login  from "./components/Login";
+import CreateAcc from "./components/CreateAcc";
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <NavBar/>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route  path="/breakfast" element={<Breakfast />} />
+        <Route  path="/brunch" element={<Brunch />} />
+        <Route  path="/lunch" element={<Lunch />} />
+        <Route  path="/dinner" element={<Dinner />} />
+        <Route  path="/login" element={<Login />} />
+        <Route  path="/register" element={<CreateAcc />} />
+      </Routes>
     </div>
   );
 }
